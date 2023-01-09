@@ -1,4 +1,5 @@
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
+#include "Contact.hpp"
 
 int main(void)
 {
@@ -13,7 +14,7 @@ int main(void)
 			phonebook.add();
 		if (input.compare("SEARCH") == 0)
 			phonebook.search();
-		if (input.compare("EXIT") == 0)
+		if (cin.eof() || cin.fail() || input.compare("EXIT") == 0)
 			break;
 	}
 }

@@ -14,7 +14,7 @@ CC	= c++
 
 CCFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-NAME	= phonebook
+NAME	= test_Zombie
 
 RESET	= \033[0m
 BLACK	= \033[0;30m
@@ -38,8 +38,8 @@ BOLDWHITE	= \033[1m\033[37m
 #SRCDIR	= src/
 
 SRC	= main.cpp\
-	  Contact.cpp\
-	  Phonebook.cpp
+	  Zombie.cpp\
+	  zombieHord.cpp
 
 OBJ 	= $(SRC:%.cpp=%.o)
 
@@ -67,4 +67,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean all re
+test:
+	echo "test $(RED)test"
+
+.PHONY: test clean fclean all re

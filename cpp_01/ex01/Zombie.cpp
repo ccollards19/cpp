@@ -21,3 +21,8 @@ void Zombie::announce()
 {
 	std::cout << name << " BraiiiiiiinnnzzzZ..." << std::endl;
 }
+
+void zombieHorde()
+{
+	
+}
