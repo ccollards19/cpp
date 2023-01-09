@@ -38,7 +38,9 @@ BOLDWHITE	= \033[1m\033[37m
 #SRCDIR	= src/
 
 SRC	= main.cpp\
-	  Zombie.cpp
+	  Zombie.cpp\
+	  randomChump.cpp\
+	  newZombie.cpp
 
 OBJ 	= $(SRC:%.cpp=%.o)
 

@@ -7,4 +7,8 @@ int main()
 
 	b.announce();
 	a.announce();
+	randomChump("chum");
+	Zombie *zom = newZombie("zom");
+	zom->announce();
+	delete zom;
 }

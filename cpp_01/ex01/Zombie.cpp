@@ -22,7 +22,15 @@ void Zombie::announce()
 	std::cout << name << " BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-void zombieHorde()
+Zombie* newZombie( std::string name )
 {
-	
+	Zombie *zom;
+	zom = new Zombie(name);
+	return (zom);
+}
+
+void randomChump( std::string name )
+{
+	Zombie chump(name);
+	chump.announce();
 }
