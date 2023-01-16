@@ -14,7 +14,7 @@ CC	= c++
 
 CCFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-NAME	= test_Zombie
+NAME	= cpp_test
 
 RESET	= \033[0m
 BLACK	= \033[0;30m
@@ -38,12 +38,11 @@ BOLDWHITE	= \033[1m\033[37m
 #SRCDIR	= src/
 
 SRC	= main.cpp\
-	  Zombie.cpp\
-	  zombieHorde.cpp
+	  Fixed.cpp
 
 OBJ 	= $(SRC:%.cpp=%.o)
 
-BOBJS	= $(BONUS:%.cpp=%.o)
+BOBJS	= $(BONUS:%.c=%.o)
 
 #end of variable definitions
 
@@ -53,7 +52,7 @@ $(NAME): $(OBJ)
 	 @$(CC) $(CCFLAGS) $(OBJ) -o $@
 	 @printf "\n[COMPILED]\n" 
 
-%.o: %.cpp
+%.o: %.c
 	@printf "$(GREEN).$(RESET)"
 	@$(CC) $(CCFLAGS) -c $< -o $@ 
 

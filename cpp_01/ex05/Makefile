@@ -14,7 +14,7 @@ CC	= c++
 
 CCFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-NAME	= test_Zombie
+NAME	= cpp_test
 
 RESET	= \033[0m
 BLACK	= \033[0;30m
@@ -38,8 +38,7 @@ BOLDWHITE	= \033[1m\033[37m
 #SRCDIR	= src/
 
 SRC	= main.cpp\
-	  Zombie.cpp\
-	  zombieHorde.cpp
+	  Harl.cpp
 
 OBJ 	= $(SRC:%.cpp=%.o)
 

@@ -2,13 +2,12 @@
 
 int main()
 {
-	Zombie a;
-	Zombie b("kevin");
-
-	b.announce();
-	a.announce();
-	randomChump("chum");
-	Zombie *zom = newZombie("zom");
-	zom->announce();
-	delete zom;
+	int i = 0;
+	Zombie *horde = zombieHorde(5, "kevin");
+	while (i < 5)
+	{
+		horde[i].announce();
+		i++;
+	}
+	delete[] horde;
 }
