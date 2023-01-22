@@ -1,0 +1,3 @@
+- adding self assignment guard in copy assignment constructor
+- checking include guards
+- 
