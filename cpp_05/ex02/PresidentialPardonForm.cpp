@@ -44,6 +44,8 @@ void PresidentialPardonForm::execute(Bureaucrat &bureaucrat) const
 		throw AForm::GradeTooLowException();
 	else if (this->get_status())
 		std::cout<<this->get_target() <<"has been pardoned by Zaphod Beeblebrox"<<std::endl;
+	else
+		std::cout<<"form couldn't be executed"<<std::endl;
 }
 
 

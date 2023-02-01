@@ -34,7 +34,7 @@ void Phonebook::search(void)
 		if (cin.eof() || cin.fail())
 			exit(1);
 		if (input.size() == 1 && isdigit(input[0]))
-			i = stoi(input);
+			i = static_cast<int>(strtoul(input.c_str(), NULL, 10));
 		if (i >= 0 && i <= index)
 			break;
 	}

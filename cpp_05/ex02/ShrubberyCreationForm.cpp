@@ -37,7 +37,6 @@ std::string ShrubberyCreationForm::get_target() const
 	return this->target;
 } 
 
-// append ? TODO
 static void make_trees(std::string target)
 {
 	std::ofstream dest(target+"_shrubberry");
@@ -78,10 +77,10 @@ void ShrubberyCreationForm::execute(Bureaucrat &bureaucrat) const
 	if (!exec_check(bureaucrat))
 		throw AForm::GradeTooLowException();
 	else if (this->get_status())
-	{
 		make_trees(this->target);
-		std::cout<<"form is signed"<<std::endl;
-	}
+	else
+		std::cout<<"couldn't execute form"<<std::endl;
+	
 }
 
 

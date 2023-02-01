@@ -48,7 +48,10 @@ void RobotomyRequestForm::execute(Bureaucrat &bureaucrat) const
         	srand (time(NULL));
         	if (rand() % 2)
 			std::cout<<this->get_target() <<" has been robotomised"<<std::endl;
-      }
+	}
+	else
+			std::cout<<"form couldn't be executed"<<std::endl;
+	
 }
 
 std::ostream & operator<< (std::ostream &out, const RobotomyRequestForm &obj)

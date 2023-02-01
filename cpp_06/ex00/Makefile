@@ -38,12 +38,7 @@ BOLDWHITE	= \033[1m\033[37m
 #SRCDIR	= src/
 
 SRC	= main.cpp\
-	  AForm.cpp\
-	  ShrubberyCreationForm.cpp\
-	  RobotomyRequestForm.cpp\
-	  PresidentialPardonForm.cpp\
-	  Intern.cpp\
-	  Bureaucrat.cpp
+	  ToConvert.cpp
 
 OBJ 	= $(SRC:%.cpp=%.o)
 
