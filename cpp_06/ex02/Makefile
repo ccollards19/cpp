@@ -38,7 +38,10 @@ BOLDWHITE	= \033[1m\033[37m
 #SRCDIR	= src/
 
 SRC	= main.cpp\
-	  ScalarConverter.cpp
+	  Base.cpp\
+	  A.cpp\
+	  B.cpp\
+	  C.cpp
 
 OBJ 	= $(SRC:%.cpp=%.o)
 
