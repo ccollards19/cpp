@@ -122,6 +122,9 @@ Account::Account()
 ///////////////////DESTRUCTOR/////////////////////////
 Account::~Account( void )
 {
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex << ";amount:" 
+	<< _amount << ";closed" << std::endl;
 
 }
 

@@ -9,6 +9,7 @@ class HumanB
 	private:
 		std::string name;
 		Weapon *weapon;
+		bool armed;
 	public:
 		HumanB(void);
 		HumanB(std::string name);

@@ -1,17 +1,21 @@
 #include <iostream>
 #include "Phonebook.hpp"
 
-Phonebook::Phonebook() {index = -1;}
+Phonebook::Phonebook() {index = -1; current = -1;}
 
 void Phonebook::add(void)
-{	
-	if (index < 7)
+{
+	if (index < 7) 
 		index++;
-	contact_stack[index].set_first_name();
-	contact_stack[index].set_last_name();
-	contact_stack[index].set_nickname();
-	contact_stack[index].set_number();
-	contact_stack[index].set_darkest_secret();
+	if (current < 7) 
+		current++;
+	else
+		current = 0;
+	contact_stack[current].set_first_name();
+	contact_stack[current].set_last_name();
+	contact_stack[current].set_nickname();
+	contact_stack[current].set_number();
+	contact_stack[current].set_darkest_secret();
 }
 
 void Phonebook::search(void)

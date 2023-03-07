@@ -1,3 +1,4 @@
-- adding self assignment guard in copy assignment constructor
-- checking include guards
-- 
+- check for include gards
+- check for self assignement gards for the = operator
+- access is on per class basis not per object. getters and setters are not necessary
+- check diff tussen const ptr et ptr for ex01 cpp08

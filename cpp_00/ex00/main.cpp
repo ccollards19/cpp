@@ -9,7 +9,7 @@ int main(int argc, char **argv)
 		cout<<"* LOUD AND UNBEARABLE FEEDBACK NOISE *"<<endl;
 	else 
 	{
-		int i = 0;
+		int i = 1;
 		while (i < argc)
 		{
 			string str = argv[i];

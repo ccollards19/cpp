@@ -10,6 +10,7 @@ class Phonebook
 	private:
 		Contact	contact_stack[8];
 		int	index;
+		int	current;
 	public:
 		Phonebook();
 		void add(void);

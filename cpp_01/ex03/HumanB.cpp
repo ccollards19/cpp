@@ -5,11 +5,12 @@
 
 void HumanB::attack()
 {
-	std::cout<<name<<" attack with their "<<weapon->getType()<<std::endl;
+	if (armed)
+		std::cout<<name<<" attack with their "<<weapon->getType()<<std::endl;
 }
 
 HumanB::HumanB(std::string name)
-	: name(name)
+	: name(name), armed(false)
 {
 
 }
@@ -17,6 +18,7 @@ HumanB::HumanB(std::string name)
 void HumanB::setWeapon(Weapon &weapon)
 {
 	this->weapon = &weapon;
+	armed = true;
 }
 
 HumanB::~HumanB()
