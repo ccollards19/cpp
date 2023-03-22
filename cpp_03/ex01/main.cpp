@@ -7,6 +7,7 @@ int main( void )
 	ClapTrap a;
 	ClapTrap kevin("Kevin");
 	ScavTrap serena("Serena");
+	ClapTrap *ptr = new ScavTrap();
 
 	kevin.ClapTrap::attack("a");
 	a.ClapTrap::takeDamage(0);
@@ -15,6 +16,7 @@ int main( void )
 	serena.ScavTrap::attack("a");
 	serena.ScavTrap::takeDamage(0);
 	serena.ScavTrap::beRepaired(0);
-	
+
+	delete ptr;
 	return 0;
 }

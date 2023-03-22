@@ -7,6 +7,7 @@ ScavTrap::ScavTrap ()
 	this->hit_points = 100;
 	this->energy_points = 50;
 	this->attack_damage = 20;
+	std::cout<<"scav constructor called"<<std::endl;
 }
 
 ScavTrap::ScavTrap (std::string name)
@@ -15,6 +16,7 @@ ScavTrap::ScavTrap (std::string name)
 	this->hit_points = 100;
 	this->energy_points = 50;
 	this->attack_damage = 20;
+	std::cout<<"scav constructor called"<<std::endl;
 }
 
 ScavTrap::ScavTrap (ScavTrap const &old)
@@ -23,23 +25,34 @@ ScavTrap::ScavTrap (ScavTrap const &old)
 	this->hit_points = old.hit_points;
 	this->energy_points = old.energy_points;
 	this->attack_damage = old.attack_damage;
+	std::cout<<"scav constructor called"<<std::endl;
 }
 
 ScavTrap &ScavTrap::operator= (ScavTrap const &old)
 {
-	this->name = old.name;
-	this->hit_points = old.hit_points;
-	this->energy_points = old.energy_points;
-	this->attack_damage = old.attack_damage;
+	if (&old != this)
+	{
+		this->name = old.name;
+		this->hit_points = old.hit_points;
+		this->energy_points = old.energy_points;
+		this->attack_damage = old.attack_damage;
+	}
 	return *this;
 }
 ///////////////////////////////////////////////////////////
 
 ScavTrap::~ScavTrap ()
 {
-	std::cout<<"scav trap destructor"<<std::endl;
+	std::cout<<"scav destructor called"<<std::endl;
+
 }
 ///////////////////////////////////////////////////////////
+
+void ScavTrap::attack(const std::string& target)
+{
+	std::cout<<"ScavTrap "<<this->name<<" attacks "<<target
+	<<", causing "<< this->attack_damage << " points of damage!"<<std::endl;
+}
 
 void ScavTrap::guardGate()
 {

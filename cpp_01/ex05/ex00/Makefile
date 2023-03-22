@@ -14,7 +14,7 @@ CC	= c++
 
 CCFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-NAME	= cpp_test
+NAME	= test_Zombie
 
 RESET	= \033[0m
 BLACK	= \033[0;30m
@@ -38,11 +38,13 @@ BOLDWHITE	= \033[1m\033[37m
 #SRCDIR	= src/
 
 SRC	= main.cpp\
-	  Fixed.cpp
+	  Zombie.cpp\
+	  randomChump.cpp\
+	  newZombie.cpp
 
 OBJ 	= $(SRC:%.cpp=%.o)
 
-BOBJS	= $(BONUS:%.c=%.o)
+BOBJS	= $(BONUS:%.cpp=%.o)
 
 #end of variable definitions
 

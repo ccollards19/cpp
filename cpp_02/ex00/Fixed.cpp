@@ -8,15 +8,16 @@ Fixed::Fixed ()
 }
 
 Fixed::Fixed (Fixed const &old)
+	: value(old.getRawBits())
 {
 	std::cout<<"copy constructor called"<<std::endl;
-	this->value = old.getRawBits();
 }
 
 Fixed &Fixed::operator= (Fixed const &old)
 {
 	std::cout<<"copy constructor called"<<std::endl;
-	this->value = old.getRawBits();
+	if (&old != this)
+		this->value = old.getRawBits();
 	return *this;
 }
 

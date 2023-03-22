@@ -1,3 +1,4 @@
+#pragma once
 #include "ClapTrap.hpp"
 
 class FragTrap : public ClapTrap
@@ -6,6 +7,7 @@ class FragTrap : public ClapTrap
 		
 	public :
 		void highFivesGuys();		
+		void attack(const std::string& target);
 		FragTrap ();
 		FragTrap (std::string name);
 		FragTrap (FragTrap const &FragTrap);

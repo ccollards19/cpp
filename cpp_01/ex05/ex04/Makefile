@@ -37,12 +37,11 @@ BOLDWHITE	= \033[1m\033[37m
 
 #SRCDIR	= src/
 
-SRC	= main.cpp\
-	  Fixed.cpp
+SRC	= main.cpp
 
 OBJ 	= $(SRC:%.cpp=%.o)
 
-BOBJS	= $(BONUS:%.c=%.o)
+BOBJS	= $(BONUS:%.cpp=%.o)
 
 #end of variable definitions
 

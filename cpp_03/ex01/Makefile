@@ -53,7 +53,7 @@ $(NAME): $(OBJ)
 	 @$(CC) $(CCFLAGS) $(OBJ) -o $@
 	 @printf "\n[COMPILED]\n" 
 
-%.o: %.c
+%.o: %.cpp
 	@printf "$(GREEN).$(RESET)"
 	@$(CC) $(CCFLAGS) -c $< -o $@ 
 

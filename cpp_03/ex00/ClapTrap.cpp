@@ -1,39 +1,44 @@
 #include "ClapTrap.hpp"
 #include "iostream"
-#include "cmath"
 
 ClapTrap::ClapTrap ()
 	: name("unnamed"), hit_points(10), energy_points(10), attack_damage(0)
 {
-
+	std::cout<<"constructor called"<<std::endl;
 }
 
 ClapTrap::ClapTrap (std::string name)
 	: hit_points(10), energy_points(10), attack_damage(0)
 {
 	this->name = name;
+	std::cout<<"constructor called"<<std::endl;
 }
 
 ClapTrap::ClapTrap (ClapTrap const &old)
 {
 	this->name = old.name;
-	this->name = old.hit_points;
-	this->name = old.energy_points;
-	this->name = old.attack_damage;
+	this->hit_points = old.hit_points;
+	this->energy_points = old.energy_points;
+	this->attack_damage = old.attack_damage;
+	std::cout<<"constructor called"<<std::endl;
 }
 
 ClapTrap &ClapTrap::operator= (ClapTrap const &old)
 {
-	this->name = old.name;
-	this->name = old.hit_points;
-	this->name = old.energy_points;
-	this->name = old.attack_damage;
+	if (this != &old)
+	{
+		this->name = old.name;
+		this->hit_points = old.hit_points;
+		this->energy_points = old.energy_points;
+		this->attack_damage = old.attack_damage;
+	}
 	return *this;
 }
 ///////////////////////////////////////////////////////////
 
 ClapTrap::~ClapTrap ()
 {
+	std::cout<<"destructor called"<<std::endl;
 
 }
 ///////////////////////////////////////////////////////////

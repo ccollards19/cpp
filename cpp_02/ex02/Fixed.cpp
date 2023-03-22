@@ -17,8 +17,8 @@ Fixed::Fixed (int const nbr)
 Fixed::Fixed (float const nbr)
 {
 	std::cout<<"float constructor called"<<std::endl;
-	float integ;
-	float frac = std::modf(nbr, &integ);
+	float integ = roundf(nbr);
+	float frac = nbr - roundf(nbr);
 	this->value = static_cast<int>(integ);
 	this->value = this->value << 8;
 	frac *= 256;
