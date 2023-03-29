@@ -1,3 +1,4 @@
+#pragma once
 #include "iostream"
 
 class Cat : public Animal
@@ -9,5 +10,5 @@ class Cat : public Animal
 		~Cat();
 
 		Cat &operator= (Cat const &old);
-		virtual void makeSound() const;
+		void makeSound() const;
 };

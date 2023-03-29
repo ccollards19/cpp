@@ -21,8 +21,11 @@ Cat::Cat (Cat const &old)
 
 Cat &Cat::operator= (Cat const &old)
 {
-	this->type = old.type;
-	std::cout<<"Cat copy assignement Constructor"<<std::endl;
+	if (&old != this)
+	{
+		this->type = old.type;
+		std::cout<<"Cat copy assignement Constructor"<<std::endl;
+	}
 	return *this;
 }
 ///////////////////////////////////////////////////////////

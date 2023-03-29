@@ -1,5 +1,6 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
+#include "Brain.hpp"
 #include "iostream"
 
 Dog::Dog ()
@@ -17,16 +18,19 @@ Dog::Dog (std::string type)
 
 Dog::Dog (Dog const &old)
 {
-	this->brain = new Brain;
+	this->brain = new Brain(*(old.brain));
 	this->type = old.type;
 	std::cout<<"Dog copy Constructor"<<std::endl;
 }
 
 Dog &Dog::operator= (Dog const &old)
 {
-	this->brain = new Brain;
-	this->type = old.type;
-	std::cout<<"Dog copy assignement Constructor"<<std::endl;
+	if (&old != this)
+	{
+		*(this->brain) = *(old.brain);
+		this->type = old.type;
+		std::cout<<"Dog copy assignement Constructor"<<std::endl;
+	}
 	return *this;
 }
 ///////////////////////////////////////////////////////////

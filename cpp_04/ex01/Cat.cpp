@@ -1,5 +1,6 @@
 #include "Animal.hpp"
 #include "Cat.hpp"
+#include "Brain.hpp"
 #include "iostream"
 
 Cat::Cat ()
@@ -17,16 +18,19 @@ Cat::Cat (std::string type)
 
 Cat::Cat (Cat const &old)
 {
-	this->brain = new Brain;
+	this->brain = new Brain(*(old.brain));
 	this->type = old.type;
 	std::cout<<"Cat copy Constructor"<<std::endl;
 }
 
 Cat &Cat::operator= (Cat const &old)
 {
-	this->brain = new Brain;
-	this->type = old.type;
-	std::cout<<"Cat copy assignement Constructor"<<std::endl;
+	if (&old != this)
+	{
+		*(this->brain) = *(old.brain);
+		this->type = old.type;
+		std::cout<<"Cat copy assignement Constructor"<<std::endl;
+	}
 	return *this;
 }
 ///////////////////////////////////////////////////////////

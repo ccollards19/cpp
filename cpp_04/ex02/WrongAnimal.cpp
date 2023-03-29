@@ -21,8 +21,11 @@ WrongAnimal::WrongAnimal (WrongAnimal const &old)
 
 WrongAnimal &WrongAnimal::operator= (WrongAnimal const &old)
 {
-	this->type = old.type;
-	std::cout<<"WrongAnimal copy assignement Constructor"<<std::endl;
+	if (&old != this)
+	{
+		this->type = old.type;
+		std::cout<<"WrongAnimal copy assignement Constructor"<<std::endl;
+	}
 	return *this;
 }
 ///////////////////////////////////////////////////////////

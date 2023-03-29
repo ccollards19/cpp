@@ -1,4 +1,5 @@
 #include "iostream"
+#include "Brain.hpp"
 
 class Dog : public  Animal
 {

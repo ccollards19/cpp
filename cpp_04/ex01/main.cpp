@@ -3,22 +3,18 @@
 #include "Cat.hpp"
 #include "WrongCat.hpp"
 #include "Dog.hpp"
+#include "Brain.hpp"
 #include <iostream>
 
 int main() 
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	
-	delete meta;	
-	delete j;	
-	delete i;	
+	Animal *cat_1 = new Cat();
+	Animal *cat_2 = new Cat();
+
+	*cat_1 = *cat_2;
+
+	delete cat_1;
+	delete cat_2;
+
 	return 0;
 }

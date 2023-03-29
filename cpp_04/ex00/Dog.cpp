@@ -21,8 +21,11 @@ Dog::Dog (Dog const &old)
 
 Dog &Dog::operator= (Dog const &old)
 {
-	this->type = old.type;
-	std::cout<<"Dog copy assignement Constructor"<<std::endl;
+	if (&old != this)
+	{
+		this->type = old.type;
+		std::cout<<"Dog copy assignement Constructor"<<std::endl;
+	}
 	return *this;
 }
 ///////////////////////////////////////////////////////////

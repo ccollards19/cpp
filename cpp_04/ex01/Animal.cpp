@@ -1,5 +1,4 @@
 #include "Animal.hpp"
-#include "Brain.hpp"
 #include "iostream"
 
 Animal::Animal ()
@@ -22,8 +21,11 @@ Animal::Animal (Animal const &old)
 
 Animal &Animal::operator= (Animal const &old)
 {
-	this->type = old.type;
-	std::cout<<"Animal copy assignement Constructor"<<std::endl;
+	if (&old != this)
+	{
+		this->type = old.type;
+		std::cout<<"Animal copy assignement Constructor"<<std::endl;
+	}
 	return *this;
 }
 ///////////////////////////////////////////////////////////
