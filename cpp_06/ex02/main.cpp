@@ -65,7 +65,7 @@ void identify(Base& p)
 	std::cout<<"Failed"<<std::endl;
 }
 
-int main(int argc, char **argv) 
+int main() 
 {
 	Base *test = generate();
 	identify(test);

@@ -1,4 +1,5 @@
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 #include "iostream"
 
 Form::Form ()
@@ -14,16 +15,17 @@ Form::Form (std::string n_name, bool n_is_signed, int n_sign_grade, int n_exec_g
 }
 
 Form::Form (Form const &old)
-	: name(old.Form::get_name()), 
-	is_signed(old.Form::get_status()), 
-	sign_grade(old.Form::get_exec_grade()), 
-	exec_grade(old.Form::get_exec_grade())
+	: name(old.get_name()), 
+	is_signed(old.get_status()), 
+	sign_grade(old.get_sign_grade()), 
+	exec_grade(old.get_exec_grade())
 {
 	std::cout<<"Form copy Constructor"<<std::endl;
 }
 
 Form &Form::operator= (Form const &old)
 {
+	is_signed = old.get_status(); 
 	return *this;
 }
 

@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "iostream"
 
 Bureaucrat::Bureaucrat ()
 	: name("underling"), grade(150)
@@ -30,12 +30,13 @@ Bureaucrat::Bureaucrat (int ngrade)
 Bureaucrat::Bureaucrat (Bureaucrat const &old)
 	: name(old.Bureaucrat::getName())
 {
-	this->setGrade(old.Bureaucrat::getGrade());
+	this->setGrade(old.getGrade());
 	std::cout<<"Bureaucrat copy Constructor"<<std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator= (Bureaucrat const &old)
 {
+	this->setGrade(old.getGrade());
 	return *this;
 }
 ///////////////////////////////////////////////////////////
@@ -72,6 +73,16 @@ void Bureaucrat::setGrade(int grade)
 	}
 }
 
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("GradeTooLowException");
+}
+
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("GradeTooHighException");
+}
+
 void Bureaucrat::promote()
 {
 	this->setGrade(this->getGrade() - 1);
@@ -96,20 +107,6 @@ void	Bureaucrat::signForm(Form &form)
 		<<err.what()<<std::endl;
 	}
 }
-
-///////////////////////////////////////////////////
-
-const char *Bureaucrat::GradeTooLowException::what() const throw()
-{
-	return ("GradeTooLowException");
-}
-
-const char *Bureaucrat::GradeTooHighException::what() const throw()
-{
-	return ("GradeTooHighException");
-}
-
-///////////////////////////////////////////////////
 
 std::ostream & operator<< (std::ostream &out, const Bureaucrat &obj)
 {

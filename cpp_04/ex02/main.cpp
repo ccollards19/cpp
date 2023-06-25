@@ -8,14 +8,12 @@
 
 int main() 
 {
-	Animal *cat_1 = new Cat();
-	Animal *cat_2 = new Cat();
+	Cat cat_1 = Cat();
+	Cat cat_2 = Cat();
 //	Animal *anim = new Animal();
 
-	*cat_1 = *cat_2;
+	cat_1 = cat_2;
 
-	delete cat_1;
-	delete cat_2;
 
 	return 0;
 }

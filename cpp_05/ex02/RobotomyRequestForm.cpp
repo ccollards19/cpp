@@ -21,6 +21,7 @@ RobotomyRequestForm::RobotomyRequestForm (RobotomyRequestForm const &old)
 
 RobotomyRequestForm &RobotomyRequestForm::operator= (RobotomyRequestForm const &old)
 {
+	target = old.get_target();
 	return *this;
 }
 
@@ -39,7 +40,6 @@ std::string RobotomyRequestForm::get_target() const
 
 void RobotomyRequestForm::execute(Bureaucrat &bureaucrat) const
 {
-	int grade = bureaucrat.Bureaucrat::getGrade();
 	if (!exec_check(bureaucrat))
 		throw AForm::GradeTooLowException();
 	else if (this->get_status())

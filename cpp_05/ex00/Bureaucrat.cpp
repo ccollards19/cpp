@@ -30,12 +30,13 @@ Bureaucrat::Bureaucrat (int ngrade)
 Bureaucrat::Bureaucrat (Bureaucrat const &old)
 	: name(old.Bureaucrat::getName())
 {
-	this->setGrade(old.Bureaucrat::getGrade());
+	this->setGrade(old.getGrade());
 	std::cout<<"Bureaucrat copy Constructor"<<std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator= (Bureaucrat const &old)
 {
+	this->setGrade(old.getGrade());
 	return *this;
 }
 ///////////////////////////////////////////////////////////

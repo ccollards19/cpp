@@ -91,7 +91,11 @@ void ScalarConverter::convert (std::string str)
 			std::cout<<"int : "<<static_cast<int>(val)<<std::endl;
 		std::cout<<"float : "<<static_cast<float>(val)<<"f"<<std::endl;
 		std::cout<<"double : "<<static_cast<double>(val)<<std::endl;
-		std::cout<<"char : '"<<static_cast<char>(val)<<"'"<<std::endl;
+		char ch = static_cast<char>(val);
+		if (std::isprint(ch))
+			std::cout<<"char : '"<<ch<<"'"<<std::endl;
+		else	
+			std::cout<<"char : non printable"<<std::endl;
 	}
 	else if (typ == 2)
 	{	
@@ -102,7 +106,11 @@ void ScalarConverter::convert (std::string str)
 			std::cout<<"float : "<<static_cast<float>(val)<<"f"<<std::endl;
 		std::cout<<"int : "<<static_cast<int>(val)<<std::endl;
 		std::cout<<"double : "<<static_cast<double>(val)<<std::endl;
-		std::cout<<"char : '"<<static_cast<char>(val)<<"'"<<std::endl;
+		char ch = static_cast<char>(val);
+		if (std::isprint(ch))
+			std::cout<<"char : '"<<ch<<"'"<<std::endl;
+		else	
+			std::cout<<"char : non printable"<<std::endl;
 	}
 	else if (typ == 3)
 	{	
@@ -113,7 +121,11 @@ void ScalarConverter::convert (std::string str)
 			std::cout<<"double : "<<static_cast<double>(val)<<std::endl;
 		std::cout<<"int : "<<static_cast<int>(val)<<std::endl;
 		std::cout<<"float : "<<static_cast<float>(val)<<"f"<<std::endl;
-		std::cout<<"char : '"<<static_cast<char>(val)<<"'"<<std::endl;
+		char ch = static_cast<char>(val);
+		if (std::isprint(ch))
+			std::cout<<"char : '"<<ch<<"'"<<std::endl;
+		else	
+			std::cout<<"char : non printable"<<std::endl;
 	}
 	else if (typ == 4)
 	{	

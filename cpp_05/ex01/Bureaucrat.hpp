@@ -1,6 +1,7 @@
 #pragma once
-#include "Form.hpp"
 #include "iostream"
+#include "exception"
+#include "Form.hpp"
 
 class Form;
 
@@ -9,6 +10,7 @@ class Bureaucrat
 	private :
 		std::string const name;
 		int grade;
+		
 	public :
 		Bureaucrat();
 		Bureaucrat(std::string name, int grade);
@@ -24,15 +26,15 @@ class Bureaucrat
 		void promote();
 		void demote();
 		void signForm(Form &form);
+
 		class GradeTooLowException : public std::exception
 		{
-			public:
-				const char *what() const throw();
+			const char* what() const throw() ;
 		};
+
 		class GradeTooHighException : public std::exception
 		{
-			public:
-				const char *what() const throw();
+			const char* what() const throw() ;
 		};
 };
 

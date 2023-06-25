@@ -35,7 +35,8 @@ Bureaucrat::Bureaucrat (Bureaucrat const &old)
 }
 
 Bureaucrat &Bureaucrat::operator= (Bureaucrat const &old)
-{
+{	
+	this->setGrade(old.getGrade());
 	return *this;
 }
 ///////////////////////////////////////////////////////////

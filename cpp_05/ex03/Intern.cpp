@@ -7,11 +7,13 @@ Intern::Intern ()
 
 Intern::Intern (Intern const &old)
 {
+	(void)old;
 	std::cout<<"Intern copy Constructor"<<std::endl;
 }
 
 Intern &Intern::operator= (Intern const &old)
 {
+	(void)old;
 	return *this;
 }
 
@@ -26,9 +28,9 @@ Intern::~Intern ()
 AForm *Intern::makeForm(std::string type, std::string target)
 {
 	AForm *ret = NULL;
-	((target.compare("shrubbery creation") && (ret = new ShrubberyCreationForm(target))) ||
-	(target.compare("robotomy request") && (ret = new RobotomyRequestForm(target))) ||
-	(target.compare("presidential pardon") && (ret = new PresidentialPardonForm(target))) ||
+	((type.compare("shrubbery creation") && (ret = new ShrubberyCreationForm(target))) ||
+	(type.compare("robotomy request") && (ret = new RobotomyRequestForm(target))) ||
+	(type.compare("presidential pardon") && (ret = new PresidentialPardonForm(target))) ||
 	std::cerr<<"Intern couldn't make form"<<std::endl);
 	return ret;
 }

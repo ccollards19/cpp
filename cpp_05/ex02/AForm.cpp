@@ -24,6 +24,7 @@ AForm::AForm (AForm const &old)
 
 AForm &AForm::operator= (AForm const &old)
 {
+	is_signed = old.get_status();
 	return *this;
 }
 
